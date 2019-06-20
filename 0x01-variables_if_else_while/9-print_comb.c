@@ -6,18 +6,15 @@
  */
 int main(void)
 {
-int ch;
-int space;
-int comma;
-space = 32;
-comma = 44;
-for (ch = 48; ch <= 57; ch++)
+int i;
+
+for (i = 48; i <= 57; i++)
 {
-putchar(ch);
-if (ch != 57)
+putchar(i);
+if (i != 57)
 {
-putchar(comma);
-putchar(space);
+putchar(44);
+putchar(32);
 }
 }
 putchar('\n');
