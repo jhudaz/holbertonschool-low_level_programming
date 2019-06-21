@@ -7,13 +7,13 @@
 int main(void)
 {
 int ch;
-for (ch = '0'; ch <= '9'; ch++)
+for (ch = 48; ch <= 57; ch++)
 {
 putchar(ch);
-if (ch!='9')
+if (ch!=57)
 {
-putchar(',');
-putchar(' ');
+putchar(44);
+putchar(32);
 }
 }
 putchar('\n');
