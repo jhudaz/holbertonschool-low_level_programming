@@ -6,15 +6,10 @@
  */
 int main(void)
 {
-int i;
-for (i = 48; i <= 57; i++)
+int ch;
+for(ch = '0'; ch <= '9'; ch++)
 {
-putchar(i);
-if (i != 57)
-{
-putchar(44);
-putchar(32);
+putchar(ch);
 }
-}
-putchar('\n');
+return (0);
 }
