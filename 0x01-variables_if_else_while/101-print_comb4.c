@@ -26,7 +26,7 @@ if (i != 55)
 putchar(44);
 putchar(32);
 }
-}    
+}
 }
 }
 }
