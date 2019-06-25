@@ -4,9 +4,10 @@
  *
  * Return: int by default
  */
-main(void)
+int main(void)
 {
 	print_alphabet();
+	return (0);
 }
 /**
  * print_alphabet - print alphabet
