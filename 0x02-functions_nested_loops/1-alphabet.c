@@ -1,6 +1,15 @@
 #include "holberton.h"
 /**
- * print_alphabet - print the alphabet
+ * main - only call a function
+ *
+ * Return: int by default
+ */
+main(void)
+{
+	print_alphabet();
+}
+/**
+ * print_alphabet - print alphabet
  *
  * Return: void
  */
