@@ -4,7 +4,7 @@
  *
  * Return: 0 for success - 1 for error
  */
-int main(void)
+void main(void)
 {
 	int ch = 'a';
 
@@ -14,5 +14,4 @@ int main(void)
 		ch++;
 	}
 	_putchar('\n');
-	return (0);
 }
