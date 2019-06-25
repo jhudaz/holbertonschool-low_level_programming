@@ -1,10 +1,10 @@
 #include "holberton.h"
 /**
- * main - print the alphabet 10 times
+ * print_alphabet_x10 - print the alphabet 10 times
  *
- * Return: 0 for success - 1 for error
+ * Return: nothing
  */
-int main(void)
+void print_alphabet_x10(void)
 {
 	int i = 0;
 
@@ -20,5 +20,4 @@ int main(void)
 		i++;
 		_putchar('\n');
 	}
-	return (0);
 }
