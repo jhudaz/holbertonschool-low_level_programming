@@ -1,10 +1,10 @@
 #include "holberton.h"
 /**
- * main - print the alphabet
+ * print_alphabet - print the alphabet
  *
- * Return: 0 for success - 1 for error
+ * Return: void
  */
-void main(void)
+void print_alphabet(void)
 {
 	int ch = 'a';
 
