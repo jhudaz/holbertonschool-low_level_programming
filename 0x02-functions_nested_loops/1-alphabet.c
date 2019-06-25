@@ -1,11 +1,17 @@
 #include "holberton.h"
 /**
- * main - only call a function
+ * print_alphabet - print alphabet
  *
- * Return: int by default
+ * Return: void
  */
-int main(void)
+void print_alphabet(void)
 {
-	print_alphabet();
-	return (0);
+	int ch = 'a';
+
+	while (ch <= 'z')
+	{
+		_putchar(ch);
+		ch++;
+	}
+	_putchar('\n');
 }
