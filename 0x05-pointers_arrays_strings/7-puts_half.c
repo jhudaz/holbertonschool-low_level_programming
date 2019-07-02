@@ -15,10 +15,9 @@ void puts_half(char *str)
 		count++;
 		i++;
 	}
-	printf("%d,\n", count);
-	if (count % 2 == 0)
+	if ((count - 1) % 2 == 0)
 	{
-		for (i = 0; i < count / 2; i++)
+		for (i = 0; i < (count - 1) / 2; i++)
 		{
 			_putchar(str[i]);
 		}
