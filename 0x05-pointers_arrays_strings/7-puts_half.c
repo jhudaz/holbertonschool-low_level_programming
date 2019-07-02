@@ -15,7 +15,8 @@ void puts_half(char *str)
 		count++;
 		i++;
 	}
-	if ((count - 1) % 2 == 0)
+
+	if ((count -1) % 2 == 0)
 	{
 		for (i = 0; i < (count - 1) / 2; i++)
 		{
