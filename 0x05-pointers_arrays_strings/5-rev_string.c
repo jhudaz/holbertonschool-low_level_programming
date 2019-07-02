@@ -15,7 +15,7 @@ void rev_string(char *s)
 		i++;
 	}
 	size = i;
-	char rev[size];
+	char rev[500];
 
 	for (i = size - 1; i >= 0; i--)
 	{
