@@ -1,27 +1,26 @@
 #include "holberton.h"
 /**
- * _strncat -  function is similar to the _strcat function, except that
+ * _strncat - function is similar to the _strcat
  * @dest: char pointer
  * @src: char pointer
- * @n: int limit
- * Return: char
+ * @n: int
+ * Return: dest
  */
 char *_strncat(char *dest, char *src, int n)
 {
-	int i;
-	int count = 0;
-	int begin = 0;
+	int i = 0;
+	int j = 0;
 
-	while (dest[i] != 0)
+	while (dest[i] != '\0')
 	{
 		i++;
 	}
-	count = i;
-	for (i = count; (src[begin] != 0 && i < (count + n)); i++)
+
+	while (src[j] != '\0' && j < n)
 	{
-		dest[i] = src[begin];
-		begin++;
+		dest[i + j] = src[j];
+		j++;
 	}
-	dest[i] = 0;
+	dest[i + j] = '\0';
 	return (dest);
 }
