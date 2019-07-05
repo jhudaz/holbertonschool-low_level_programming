@@ -35,10 +35,6 @@ char *cap_string(char *s)
 			{
 				s[j + 1] = s[j + 1] - 32;
 			}
-			if (s[j] == 9)
-			{
-				s[j] = 32;
-			}
 		}
 	}
 
