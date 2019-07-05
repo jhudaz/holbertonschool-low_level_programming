@@ -6,23 +6,18 @@
  */
 char *leet(char *s)
 {
-	char data[5][2] = {
-		{'a', 'A'}, {'e', 'E'}, {'o', 'O'}, {'t', 'T'}, {'l', 'L'}};
-	char values[] = {'4', '3', '0'};
+	char c[] = "AaEeOoTtLl";
+	char n[] = "4433007711";
 	int i;
 	int j;
 
 	for (i = 0; s[i] != '\0'; i++)
 	{
-		for (j = 0; j < 100; j++)
+		for (j = 0; j < 10; j++)
 		{
-			if (s[i] == data[i][j] && data[i][j] != ' ')
+			if (s[i] == c[j])
 			{
-				s[i] = values[i];
-			}
-			else
-			{
-				break;
+				s[i] = n[j];
 			}
 		}
 	}
