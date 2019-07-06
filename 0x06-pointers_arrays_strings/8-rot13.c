@@ -1,5 +1,4 @@
 #include "holberton.h"
-#include <stdio.h>
 /**
  * rot13 - Write a function that concatenates two strings.
  * @s: char pointer
@@ -23,6 +22,5 @@ char *rot13(char *s)
 			}
 		}
 	}
-	printf("count is %d\n", i);
 	return (s);
 }
