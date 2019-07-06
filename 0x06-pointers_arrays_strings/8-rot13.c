@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include <stdio.h>
 /**
  * rot13 - Write a function that concatenates two strings.
  * @s: char pointer
@@ -18,8 +19,10 @@ char *rot13(char *s)
 			if (s[i] == abc[j])
 			{
 				s[i] = rot[j];
+				break;
 			}
 		}
 	}
+	printf("count is %d\n", i);
 	return (s);
 }
