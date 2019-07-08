@@ -18,13 +18,14 @@ unsigned int _strspn(char *s, char *accept)
 		i++;
 	}
 	count = i;
-	for (i = 0; i < count + 1; i++)
+	for (i = 0; i <= count; i++)
 	{
-		for (j = 0; j < count + 1; j++)
+		for (j = 0; j <= count; j++)
 		{
 			if (s[i] == accept[j])
 			{
 				count2++;
+				break;
 			}
 		}
 	}
