@@ -1,12 +1,11 @@
-# 0x07-pointers_arrays_strings
-Directorie with programs using more Pointers, arrays and strings
+# 0x08-recursion
+Directorie with functins using recursion
 ### Mandatories
-* 0-memset.c
-* 1-memcpy.c
-* 2-strncpy.c
-* 3-strcmp.c
-* 4-rev_array.c
-* 5-string_toupper.c
-* 6-cap_string.c
-* 7-7-leet.c
-* 8-rot13.c
+* 0-puts_recursion.c
+* 1-print_rev_recursion.c
+* 2-strlen_recursion.c
+* 3-factorial.c
+* 4-pow_recursion.c
+* 5-sqrt_recursion.c
+* 6-is_prime_number.c
+* 7-is_palindrome.c
