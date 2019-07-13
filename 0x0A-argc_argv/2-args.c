@@ -9,7 +9,7 @@ int main(int argc, char **argv)
 {
 	while (argc--)
 	{
-		printf("%s\n", *argv++);
+		printf("pocision %d tiene %s\n", argc, *argv++);
 	}
 	return (0);
 }
