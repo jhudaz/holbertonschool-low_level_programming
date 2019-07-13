@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
- * main - function that prints all the arguments with a new line
+ * main - function that prints the result after multiply two arguments type int
  * @argc: count of the arguments
  * @argv: pointers array
  * Return: int
