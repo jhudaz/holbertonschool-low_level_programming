@@ -1,5 +1,6 @@
 #include "holberton.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 /**
  * _strdup - function that dubplicate a pointer using the value of another
@@ -17,16 +18,17 @@ char *_strdup(char *str)
 		i++;
 	}
 	count = i;
-	if (count == 0)
+	if (count == 0 || str == 0)
 	{
-		str2 = NULL;
+		str2 = 0;
 	}
 	else
 	{
+
 		str2 = (char *)malloc(count * sizeof(char));
 		if (str2 == NULL)
 		{
-			str2 = NULL;
+			str2 = 0;
 		}
 		else
 		{
