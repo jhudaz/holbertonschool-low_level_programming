@@ -1,6 +1,6 @@
 #include "holberton.h"
 #include <stdlib.h>
-#include <stdio.h>
+
 /**
  * _strdup - function that dubplicate a pointer using the value of another
  * @str: pointer with the addres of a string
