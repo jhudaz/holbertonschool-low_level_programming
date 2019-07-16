@@ -14,21 +14,23 @@ int **alloc_grid(int width, int height)
 	int i;
 	int j;
 
+	if (width < 1 || height < 1)
+		return (NULL);
 	matrix = malloc(sizeof(int *) * height);
-
-	if (width <= 0 || height <= 0)
+	if (matrix == NULL)
 		return (NULL);
 
 	for (i = 0; i < height; i++)
 	{
-		matrix[i] = (int *)malloc(sizeof(int) * width);
+		matrix[i] = malloc(sizeof(int) * width);
 		if (matrix[i] == NULL)
 		{
-			for (j = i; j >= 0; j--)
+			for (j = 0; j < i; j++)
 			{
-				free(matrix[i]);
+				free(matrix[j]);
 			}
 			free(matrix);
+			return (NULL);
 		}
 		for (j = 0; j < width; j++)
 		{
