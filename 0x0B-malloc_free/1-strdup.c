@@ -19,14 +19,14 @@ char *_strdup(char *str)
 	count = i;
 	if (count == 0)
 	{
-		str2 = 0;
+		str2 = NULL;
 	}
 	else
 	{
 		str2 = (char *)malloc(count * sizeof(char));
 		if (str2 == NULL)
 		{
-			str2 = 0;
+			str2 = NULL;
 		}
 		else
 		{
