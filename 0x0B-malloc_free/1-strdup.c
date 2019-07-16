@@ -18,7 +18,7 @@ char *_strdup(char *str)
 		i++;
 	}
 	count = i;
-	if (count == 0 || str == 0)
+	if (count == 0 || *str == NULL)
 	{
 		str2 = 0;
 	}
