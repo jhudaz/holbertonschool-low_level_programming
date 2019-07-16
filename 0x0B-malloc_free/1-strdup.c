@@ -13,6 +13,11 @@ char *_strdup(char *str)
 	int count = 0;
 	char *str2;
 
+	if (str == NULL)
+	{
+		return (NULL);
+	}
+
 	while (str[i] != '\0')
 	{
 		i++;
@@ -38,5 +43,4 @@ char *_strdup(char *str)
 		str2 = 0;
 	}
 	return (str2);
-
 }
