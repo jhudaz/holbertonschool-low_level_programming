@@ -13,26 +13,17 @@ char *_strdup(char *str)
 	int count = 0;
 	char *str2;
 
-	if (*str == NULL)
-	{
-		return (NULL);
-	}
 	while (str[i] != '\0')
 	{
 		i++;
 	}
-	count = i;
-	if (count == 0)
+	count = i + 1;
+	if (count > 0)
 	{
-		return (NULL);
-	}
-	else
-	{
-
 		str2 = (char *)malloc(count * sizeof(char));
 		if (str2 == NULL)
 		{
-			return (NULL);
+			str2 = 0;
 		}
 		else
 		{
@@ -41,6 +32,11 @@ char *_strdup(char *str)
 				str2[i] = str[i];
 			}
 		}
-		return (str2);
 	}
+	else
+	{
+		str2 = 0;
+	}
+	return (str2);
+
 }
