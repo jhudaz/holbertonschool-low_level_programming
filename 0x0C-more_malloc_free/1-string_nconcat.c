@@ -9,6 +9,7 @@
 unsigned int _strlen(char *s)
 {
 	unsigned int i = 0;
+
 	while (*s != '\0')
 	{
 		i++;
@@ -38,7 +39,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		s2 = "";
 	len1 = _strlen(s1);
 	len2 = _strlen(s2);
-	if (n >= len2)
+	if (n > len2)
 		n = _strlen(s2);
 	total = len1 + n;
 
