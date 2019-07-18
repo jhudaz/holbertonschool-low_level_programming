@@ -8,12 +8,13 @@
  */
 unsigned int _strlen(char *s)
 {
-	if (*s == '\0')
+	unsigned int i = 0;
+	while (*s != '\0')
 	{
-		return (0);
+		i++;
+		s++;
 	}
-
-	return (1 + _strlen(s + 1));
+	return (i);
 }
 /**
  * string_nconcat - function that concat two strings
