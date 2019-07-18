@@ -36,10 +36,10 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (s2 == NULL)
 		s2 = "";
 	len1 = _strlen(s1);
+	len2 = _strlen(s2);
 	if (n >= len2)
-		n = _strlen(s2);
-
-	total = (len1 + n) + 1;
+		n = _strlen(s2) + 1;
+	total = (len1 + n);
 	ptr = malloc(sizeof(char) * total);
 	if (ptr == NULL)
 		return (NULL);
