@@ -16,7 +16,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	if (nmemb <= 0 || size <= 0)
 		return (NULL);
 	total = nmemb * size;
-	ptr = malloc(sizeof(int) * total);
+	ptr = malloc(sizeof(char) * total);
 	if (ptr == NULL)
 		return (NULL);
 	for (i = 0; i < total; i++)
