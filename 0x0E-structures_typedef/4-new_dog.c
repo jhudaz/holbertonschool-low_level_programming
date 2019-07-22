@@ -51,11 +51,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	namelen = _strlen(name);
 	ownerlen = _strlen(owner);
 
-	my_dog = malloc(sizeof(struct dog));
-	if (my_dog == NULL)
-		return (NULL);
-
-	cpname = malloc(sizeof(char) * (namelen + 1));
+	cpname = malloc(sizeof(char *) * (namelen + 1));
 	if (cpname == NULL)
 	{
 		free(my_dog);
@@ -64,7 +60,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	}
 	cpname = _copychar(cpname, name);
 
-	cpowner = malloc(sizeof(char) * (ownerlen + 1));
+	cpowner = malloc(sizeof(char *) * (ownerlen + 1));
 	if (cpowner == NULL)
 	{
 		free(my_dog);
@@ -72,8 +68,11 @@ dog_t *new_dog(char *name, float age, char *owner)
 		return (NULL);
 	}
 	cpowner = _copychar(cpowner, owner);
-	
-	
+
+	my_dog = malloc(sizeof(struct dog));
+	if (my_dog == NULL)
+		return (NULL);
+
 	my_dog->name = cpname;
 	my_dog->age = age;
 	my_dog->owner = cpowner;
