@@ -10,10 +10,11 @@
 */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	struct dog dog;
 	struct dog *ptr;
 
-	ptr = &dog;
+	ptr = malloc(sizeof(struct dog));
+	if (ptr == NULL)
+		return (NULL);
 	ptr->name = name;
 	ptr->age = age;
 	ptr->owner = owner;
