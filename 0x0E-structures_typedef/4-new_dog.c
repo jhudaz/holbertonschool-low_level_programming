@@ -72,7 +72,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	}
 
 	cpname = _copychar(cpname, name);
-	cpowner = _copychar(cpowner, name);
+	cpowner = _copychar(cpowner, owner);
 	my_dog->name = name;
 	my_dog->age = age;
 	my_dog->owner = owner;
