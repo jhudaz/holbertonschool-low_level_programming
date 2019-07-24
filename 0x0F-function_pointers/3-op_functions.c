@@ -1,5 +1,4 @@
-#include "function_pointers.h"
-#include "calc.h"
+#include "3-calc.h"
 #include <stdio.h>
 #include <stdlib.h>
 /**
@@ -40,11 +39,6 @@ int op_mul(int a, int b)
 */
 int op_div(int a, int b)
 {
-	if (b == 0)
-	{
-		exit(98);
-		printf("Error\n");
-	}
 	return (a / b);
 }
 /**
@@ -55,10 +49,5 @@ int op_div(int a, int b)
 */
 int op_mod(int a, int b)
 {
-	if (b == 0)
-	{
-		exit(98);
-		printf("Error\n");
-	}
-	return (0);
+	return (a % b);
 }
