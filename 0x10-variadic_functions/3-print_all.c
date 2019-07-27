@@ -14,7 +14,7 @@ void print_all(const char *const format, ...)
 	unsigned int i = 0;
 	va_list list;
 
-	while (format[i] == 0)
+	while (format == NULL)
 	{
 		printf("\n");
 		return;
