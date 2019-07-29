@@ -1,16 +1,10 @@
-section	.text
-   global _start
-
-_start:	            ;linker entry
-   mov	edx,len     ;length of the string
-   mov	ecx,msg     ;write the message
-   mov	ebx,1       ;stdout
-   mov	eax,4       ;call the write function
-   int	0x80        ;call kernel system
-
-   mov	eax,1       ;call exit
-   int	0x80        ;call kernel
-
-section	.data
-msg db 'Hello, Holberton', 0xa  ;string
-len equ $ - msg     ;length of the string
+section .data
+	msg db "Hello, Holberton", 10 ; string with a new line
+section .text
+	global main
+	main:
+	mov rax, 1 ; when we call a syscal, rax must contain syscall number
+	mov rdi, 1 ; used to pass 1st argument to functions
+	mov rsi, msg ; pointer used to pass 2nd argument to functions
+	mov rdx, 17 ; when we call a syscal, rax must contain syscall number
+	syscall
