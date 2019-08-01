@@ -7,18 +7,17 @@
  * @h: pointer structure
  * Return: int count of nodes
 */
-unsigned long int print_list(list_t *h)
+size_t print_list(list_t *h)
 {
-	list_t *current = h;
 	int i = 0;
 
-	while (current != NULL)
+	while (h != NULL)
 	{
-		if (!current->str)
+		if (!h->str)
 			printf("[0] (nill)\n");
 		else
-			printf("[%d] %s\n", current->len, current->str);
-		current = current->next;
+			printf("[%d] %s\n", h->len, h->str);
+		h = h->next;
 		i++;
 	}
 	return (i);
