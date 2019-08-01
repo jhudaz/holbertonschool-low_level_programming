@@ -12,15 +12,14 @@ unsigned long int print_list(list_t *h)
 	list_t *current = h;
 	int i = 0;
 
-	while (current != '\0')
+	while (current != NULL)
 	{
 		if (!current->str)
-			printf("[0](nill)\n");
+			printf("[0] (nill)\n");
 		else
-			printf("[%d]%s\n", current->len, current->str);
+			printf("[%d] %s\n", current->len, current->str);
 		current = current->next;
 		i++;
 	}
-
 	return (i);
 }
