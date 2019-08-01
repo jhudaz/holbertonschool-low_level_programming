@@ -10,18 +10,15 @@
 size_t print_list(list_t *h)
 {
 	unsigned int i = 0;
-	list_t *copy;
 
-	copy = h;
-
-	while (copy != NULL)
+	while (h != NULL)
 	{
-		if (copy->str == NULL)
+		if (h->str == NULL)
 			printf("[0] (nill)\n");
 		else
-			printf("[%d] %s\n", copy->len, copy->str);
-		h = h->next;
+			printf("[%d] %s\n", h->len, h->str);
 		i++;
+		h = h->next;
 	}
 	return (i);
 }
