@@ -9,11 +9,11 @@
 */
 size_t print_list(list_t *h)
 {
-	int i = 0;
+	unsigned int i = 0;
 
 	while (h != NULL)
 	{
-		if (!h->str)
+		if (h->str == NULL)
 			printf("[0] (nill)\n");
 		else
 			printf("[%d] %s\n", h->len, h->str);
