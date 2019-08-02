@@ -12,7 +12,7 @@ int _strlen(char *s)
 	int i = 0;
 
 	if (!s)
-		return (NULL);
+		return (0);
 	while (s[i] != 0)
 	{
 		i++;
@@ -30,8 +30,6 @@ list_t *add_node(list_t **head, const char *str)
 	list_t *new;
 	char *cpy = strdup(str);
 
-	if (!str)
-		return (NULL);
 	new = malloc(sizeof(list_t));
 	if (!new)
 		return (NULL);
