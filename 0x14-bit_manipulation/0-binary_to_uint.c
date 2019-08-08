@@ -24,10 +24,7 @@ unsigned int _strlen(const char *str)
 
 	while (str[i] != '\0')
 	{
-		if (str[i] == '1' || str[i] == '0')
-			i++;
-		else
-			return (0);
+		i++;
 	}
 	return (i);
 }
@@ -45,18 +42,15 @@ unsigned int binary_to_uint(const char *b)
 
 	if (b == NULL)
 		return (0);
-	if (count == 0)
+
+	while (b[i] != '\0')
 	{
-		return (0);
+		if (b[i] != '0' && b[i] != '1')
+			return (0);
+		res += (b[i] - '0') * _pow_recursion(pw);
+		pw--;
+		i++;
 	}
-	else
-	{
-		while (b[i] != '\0')
-		{
-			res += (b[i] - '0') * _pow_recursion(pw);
-			pw--;
-			i++;
-		}
-	}
+
 	return (res);
 }
