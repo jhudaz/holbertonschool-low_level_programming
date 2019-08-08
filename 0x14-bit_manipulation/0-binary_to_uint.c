@@ -45,7 +45,11 @@ unsigned int binary_to_uint(const char *b)
 
 	if (b == NULL)
 		return (0);
-	if (count > 0)
+	if (count == 0)
+	{
+		return (0);
+	}
+	else
 	{
 		while (b[i] != '\0')
 		{
@@ -53,10 +57,6 @@ unsigned int binary_to_uint(const char *b)
 			pw--;
 			i++;
 		}
-		return (res);
 	}
-	else
-	{
-		return (0);
-	}
+	return (res);
 }
