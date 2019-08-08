@@ -53,10 +53,10 @@ unsigned int binary_to_uint(const char *b)
 			pw--;
 			i++;
 		}
+		return (res);
 	}
 	else
 	{
 		return (0);
 	}
-	return (res);
 }
