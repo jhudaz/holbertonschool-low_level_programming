@@ -22,24 +22,29 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	buff = malloc(sizeof(char) * letters);
 	if (!buff)
+	{
+		free(buff);
 		return (0);
-
+	}
 	/*read*/
 	fd = open(filename, O_RDONLY);
 	if (fd == -1)
+	{
+		free(buff);
 		return (0);
-
-	rd = read(1, buff, letters);
+	}
+	rd = read(fd, buff, letters);
 	close(fd);
-
 	/*write */
 	fd = open(filename, O_WRONLY);
 	if (fd == -1)
+	{
+		free(buff);
 		return (0);
+	}
 	wr = write(1, buff, rd);
-
 	if (wr == rd)
 		return (wr);
-
+	free(buff);
 	return (0);
 }
