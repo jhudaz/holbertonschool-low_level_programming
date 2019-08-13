@@ -5,21 +5,6 @@
 #include <fcntl.h>
 #include <stdlib.h>
 /**
- * _strlen - function that count the number of characters in a string
- * @str: char pointer
- * Return: int
-*/
-int _strlen(char *str)
-{
-	unsigned int i = 0;
-
-	while (str[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
-}
-/**
  * read_textfile - file that read and print a file
  * @filename: char pointer
  * @letters: structure
@@ -32,7 +17,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	ssize_t rd;
 	ssize_t wr;
 
-	if (!filename)
+	if (filename == NULL)
 		return (0);
 
 	buff = malloc(sizeof(char) * letters);
@@ -54,7 +39,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	wr = write(1, buff, rd);
 
 	if (wr == rd)
-		return (fd);
+		return (wr);
 
 	return (0);
 }
