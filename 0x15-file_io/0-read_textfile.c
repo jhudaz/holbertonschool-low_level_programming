@@ -20,31 +20,29 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (filename == NULL)
 		return (0);
 
-	buff = malloc(sizeof(char) * letters);
-	if (!buff)
-	{
-		free(buff);
-		return (0);
-	}
 	/*read*/
 	fd = open(filename, O_RDONLY);
 	if (fd == -1)
-	{
-		free(buff);
 		return (0);
-	}
+
+	buff = malloc(sizeof(char) * letters);
+	if (buff == NULL)
+		return (0);
 	rd = read(fd, buff, letters);
-	close(fd);
-	/*write */
-	fd = open(filename, O_WRONLY);
-	if (fd == -1)
+	if (rd == -1)
 	{
 		free(buff);
 		return (0);
 	}
-	wr = write(1, buff, rd);
-	if (wr == rd)
-		return (wr);
+	/*write */
+	wr = write(STDOUT_FILENO, buff, rd);
+
+	if (wr == -1)
+	{
+		free(buff);
+		return (0);
+	}
 	free(buff);
-	return (0);
+	close(fd);
+	return (wr);
 }
