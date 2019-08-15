@@ -12,7 +12,7 @@
 */
 int main(int argc, char **argv)
 {
-	int rd, wr, fd1, fd2;
+	int rd, wr, fd1, fd2, cl1, cl2;
 	char buff[1024];
 
 	if (argc != 3)
@@ -25,6 +25,7 @@ int main(int argc, char **argv)
 	if (rd == -1 || fd1 == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+		close(fd1);
 		exit(98);
 	}
 	fd2 = open(argv[2], O_CREAT | O_TRUNC | O_WRONLY, 0664);
@@ -32,16 +33,23 @@ int main(int argc, char **argv)
 	if (fd2 == -1 || wr == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+		close(fd2);
 		exit(99);
 	}
-	close(fd2);
 	while (rd == 1024)
 	{
-		fd2 = open(argv[2], O_APPEND);
 		rd = read(fd2, buff, 1024);
-		write(fd2, buff, rd);
+		wr = write(fd2, buff, rd);
 	}
-	close(fd1);
-	close(fd2);
+	cl1 = close(fd1);
+	cl2 = close(fd2);
+	if (cl1 == -1)
+	{dprintf(STDERR_FILENO, "rror: Can't close fd %d\n", cl1);
+		exit(100);
+	}
+	if (cl2 == -1)
+	{dprintf(STDERR_FILENO, "rror: Can't close %d\n", cl2);
+		exit(100);
+	}
 	return (0);
 }
