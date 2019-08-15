@@ -41,6 +41,7 @@ int main(int argc, char **argv)
 		rd = read(fd2, buff, 1024);
 		write(fd2, buff, rd);
 	}
-
+	close(fd1);
+	close(fd2);
 	return (0);
 }
