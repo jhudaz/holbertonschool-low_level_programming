@@ -38,8 +38,15 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	}
 	else
 	{
-		node->next = ht->array[idx];
-		ht->array[idx] = node;
+		while (ht->array[idx])
+		{
+			if ((ht->array[idx])->key == key)
+			{
+				node->next = ht->array[idx];
+				ht->array[idx] = node;
+			}
+			ht->array[idx] = (ht->array[idx])->next;
+		}
 	}
 	return (1);
 }
