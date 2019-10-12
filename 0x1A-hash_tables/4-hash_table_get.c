@@ -9,10 +9,12 @@
  * @key: char pointer
  * Return: Always EXIT_SUCCESS.
  */
-
 char *hash_table_get(const hash_table_t *ht, const char *key)
 {
 	unsigned long int idx;
+
+	if (!ht || !key)
+		return (NULL);
 
 	idx = key_index((unsigned char *)key, ht->size);
 
