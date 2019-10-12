@@ -14,7 +14,6 @@
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	unsigned long int idx;
-	hash_node_t *tmp;
 	hash_node_t *node;
 
 	if (!ht || !key || !value)
@@ -28,8 +27,9 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	node->value = strdup(value);
 	node->key = strdup(key);
-	node->next = NULL;
+	node->next = ht->array[idx];
 
 	ht->array[idx] = node;
 	return (1);
 }
+
