@@ -26,4 +26,5 @@ int find_idx_min(int *array, int start, size_t size);
 void quick_sort(int *array, size_t size);
 void quick_sort_helper(int *arr, int start, int end, size_t size);
 int lomuto_partition(int *arr, int start, int end, size_t size);
+void shell_sort(int *arr, size_t size);
 #endif
