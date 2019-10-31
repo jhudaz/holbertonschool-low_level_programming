@@ -23,4 +23,7 @@ void insertion_sort_list(listint_t **list);
 void swap(listint_t *nodeL, listint_t *nodeR);
 void selection_sort(int *array, size_t size);
 int find_idx_min(int *array, int start, size_t size);
+void quick_sort(int *array, size_t size);
+void quick_sort_helper(int *arr, int start, int end, size_t size);
+int lomuto_partition(int *arr, int start, int end, size_t size);
 #endif
